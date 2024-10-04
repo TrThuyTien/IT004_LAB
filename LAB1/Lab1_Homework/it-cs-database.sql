@@ -131,3 +131,122 @@ VALUES
 (8, 1, N'Nhà thiết kế UX/UI', '2023-01-01'),
 (9, 3, N'Kỹ sư DevOps', '2023-02-01'),
 (10, 5, N'Kỹ sư Blockchain', '2023-05-01');
+
+
+-- Câu 51
+SELECT * FROM ChuyenGia
+
+-- Cau 52
+SELECT HoTen, Email FROM ChuyenGia
+GO
+
+-- Cau 53
+SELECT TenCongTy, SoNhanVien FROM CongTy
+GO
+
+-- Cau 54
+SELECT * FROM DuAn
+WHERE TrangThai=N'Đang thực hiện';
+GO
+
+-- CAU 55
+SELECT TenKyNang, LoaiKyNang FROM KyNang
+GO
+
+-- CAU 56
+SELECT * FROM ChuyenGia
+WHERE GioiTinh = 'Nam'
+GO
+
+-- CAU 57
+SELECT TenCongTy, LinhVuc FROM CongTy
+WHERE SoNhanVien > 150
+GO
+
+-- CAU 58
+SELECT * FROM DuAn
+WHERE Year(NgayBatDau) = 2023
+GO
+
+-- CAU 59
+SELECT TenKyNang, LoaiKyNang FROM KyNang
+WHERE LoaiKyNang = N'Công cụ'
+GO
+
+-- CAU 60
+SELECT HoTen, NamKinhNghiem FROM ChuyenGia
+WHERE NamKinhNghiem > 5
+GO
+
+-- CAU 61
+SELECT TenCongTy, DiaChi FROM CongTy
+WHERE LinhVuc = N'Phát triển phần mềm'
+GO
+
+-- CAU 62
+SELECT * FROM DuAn
+WHERE Year(NgayKetThuc) = 2023
+GO
+
+-- CAU 63
+SELECT KyNang.TenKyNang, ChuyenGia_KyNang.CapDo 
+FROM ChuyenGia_KyNang
+INNER JOIN KyNang ON ChuyenGia_KyNang.MaKyNang = KyNang.MaKyNang
+GO
+
+-- CAU 64
+SELECT MaChuyenGia, VaiTro FROM ChuyenGia_DuAn
+GO
+
+-- CAU 65
+SELECT HoTen, NgaySinh FROM ChuyenGia
+WHERE Year(NgaySinh) >= 1990
+GO
+
+-- CAU 66
+SELECT TenCongTy, SoNhanVien FROM CongTy
+ORDER BY SoNhanVien DESC
+GO
+
+-- CAU 67
+SELECT TenDuAn, NgayBatDau FROM DuAn
+ORDER BY NgayBatDau ASC
+GO
+
+-- CAU 68
+SELECT DISTINCT TenKyNang FROM KyNang
+GO
+
+-- CAU 69
+SELECT TOP 5 HoTen, Email FROM ChuyenGia
+GO
+
+-- CAU 70
+SELECT TenCongTy FROM CongTy
+WHERE TenCongTy LIKE '%Tech%'
+GO
+
+-- CAU 71
+SELECT * FROM DuAn
+WHERE NOT TrangThai=N'Hoàn thành';
+GO
+
+-- CAU 72
+SELECT HoTen, ChuyenNganh FROM ChuyenGia
+ORDER BY ChuyenNganh, HoTen ASC
+GO
+
+-- CAU 73
+SELECT TenCongTy, LinhVuc FROM CongTy
+WHERE SoNhanVien BETWEEN 100 AND 200
+GO
+
+-- CAU 74
+SELECT TenKyNang, LoaiKyNang FROM KyNang
+ORDER BY LoaiKyNang DESC, TenKyNang ASC
+GO
+
+-- CAU 75
+SELECT HoTen, SoDienThoai, Email FROM ChuyenGia
+WHERE Email LIKE '%email.com'
+GO
