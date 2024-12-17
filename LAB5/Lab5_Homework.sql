@@ -1,4 +1,4 @@
-USE QLCT;
+USE QUANLYDUAN
 -- Câu hỏi và ví dụ về Triggers (101-110)
 
 -- 101. Tạo một trigger để tự động cập nhật trường NgayCapNhat trong bảng ChuyenGia mỗi khi có sự thay đổi thông tin.
@@ -532,7 +532,7 @@ END;
 
 
 -- 133. (tiếp tục) Tạo một trigger để tự động cập nhật thứ hạng của công ty dựa trên số lượng dự án hoàn thành và điểm đánh giá.
-CREATE TRIGGER trg_UpdateCompanyRanking
+CREATE TRIGGER trg_UpdateCompanyRanking2
 ON DuAn
 AFTER INSERT, UPDATE
 AS
@@ -555,7 +555,7 @@ BEGIN
 END;
 
 -- 134. Tạo một trigger để tự động gửi thông báo khi một chuyên gia được thăng cấp (dựa trên số năm kinh nghiệm).
-CREATE TABLE ThongBao (
+CREATE TABLE ThongBao2 (
     MaThongBao INT IDENTITY(1,1) PRIMARY KEY,
     MaChuyenGia INT,
     NoiDung NVARCHAR(500),
